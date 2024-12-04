@@ -13,33 +13,40 @@
   src: url("../assets/fonts/Roboto/Regular.ttf");
 }
 
-:root {
-
-}
+$RobotoBold: 'RobotoBold', sans-serif;
+$RobotoLight: 'RobotoLight', sans-serif;
+$RobotoRegular: 'RobotoRegular', sans-serif;
 
 body {
   background-color: #F1F1F1;
 }
 
 .wrapper {
-  padding: 0 25px;
+  padding: 0 clamp(25px, 7vw, 134px);
 }
 
 .header {
-  margin-top: 14px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
+  background-image: url("../assets/images/mount_image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1);
 
-  &__logo {
+  &__block {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: clamp(14px, 2vw, 38px) 0 clamp(14px, 4vw, 60px) 0;
+    filter: invert(1);
 
-    &__text {
-      font-family: 'RobotoBold', sans-serif;
-      font-size: 24px;
+    &__logo {
+      display: flex;
+      align-items: center;
+
+      &__text {
+        font-family: $RobotoBold;
+        font-size: 24px;
+      }
     }
 
     &__menu {
@@ -52,34 +59,34 @@ body {
         height: 17px;
       }
     }
+
   }
 }
 
 .heading__section {
+  filter: invert(1);
+
   &__title {
-    font-family: 'RobotoLight', sans-serif;
-    font-size: 20px;
+    font-family: $RobotoLight;
+    font-size: clamp(20px, 4vw, 70px);
     margin-bottom: 15px;
     color: #3D3D3D;
   }
 
   &__subtitle {
-    font-family: 'RobotoRegular', sans-serif;
-    font-size: 10px;
+    font-family: $RobotoRegular;
+    font-size: clamp(10px, 1.7vw, 20px);
     color: #3D3D3D;
+    margin-top: clamp(0px, 2vw, 30px);
+    margin-bottom: clamp(0px, 2vw, 30px);
   }
 
   &__buttons {
-    padding: 34px;
-    background-image: url("../assets/images/mount_image.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: invert(1);
+    padding: 34px 0;
     border-radius: 47px;
     display: flex;
     align-items: start;
-    height: 189px;
+    height: clamp(189px, 35vw, 571px);
 
     &__container {
       display: flex;
@@ -87,14 +94,13 @@ body {
       gap: 15px;
 
       & > * {
-        font-family: "RobotoRegular", sans-serif;
-        font-size: 12px;
-        filter: invert(1);
+        font-family: $RobotoRegular;
+        font-size: clamp(12px, 2vw, 24px);
       }
 
       & > *:first-child {
         color: #FFFFFF;
-        padding: 9px 13px;
+        padding: clamp(9px, 2vw, 18px) clamp(13px, 2.3vw, 21px);
         background-color: #000000;
         border-radius: 3px;
       }
@@ -110,14 +116,14 @@ body {
   margin-top: 56px;
 
   &__title {
-    font-family: 'RobotoBold', sans-serif;
+    font-family: $RobotoBold;
     font-size: 15px;
     color: #000000;
     margin-bottom: 27px;
   }
 
   &__subtitle {
-    font-family: 'RobotoBold', sans-serif;
+    font-family: $RobotoBold;
     font-size: 7px;
     color: #414141;
     width: 235px;
@@ -145,13 +151,13 @@ body {
 
       &__title {
         color: #656565;
-        font-family: "RobotoBold", sans-serif;
+        font-family: $RobotoBold;
         font-size: 9px;
         line-height: 164%;
       }
 
       &__text {
-        font-family: "RobotoLight", sans-serif;
+        font-family: $RobotoLight;
         font-size: 7px;
         line-height: 164%;
         width: 126px;
@@ -164,7 +170,7 @@ body {
   margin-top: 20px;
 
   &__title {
-    font-family: "RobotoBold", sans-serif;
+    font-family: $RobotoBold;
     font-size: 15px;
     color: #333333;
     margin-bottom: 15px;
@@ -220,20 +226,21 @@ body {
 
   &__picker {
     width: 181px;
-    background-color:#FFFFFF;
+    background-color: #FFFFFF;
     border-radius: 10px;
     padding: 15px 19px;
     margin: 0 auto;
-    box-shadow: 0px 0px 20px 16px rgba(17, 17, 26, 0.08);
+    box-shadow: 0 0 20px 16px rgba(17, 17, 26, 0.08);
 
     &__item {
       &__label {
-        font-family: "RobotoRegular", sans-serif;
+        font-family: $RobotoRegular;
         font-size: 6px;
         line-height: 164%;
         color: #7D7D7D;
         margin-bottom: 4px;
       }
+
       &__select {
         margin-bottom: 12px;
         display: flex;
@@ -242,7 +249,7 @@ body {
         align-items: center;
 
         &__title {
-          font-family: "RobotoRegular", sans-serif;
+          font-family: $RobotoRegular;
           font-size: 10px;
           color: #000000;
         }
@@ -262,7 +269,7 @@ body {
       background-color: #000000;
       color: #FFFFFF;
       border-radius: 5px;
-      font-family: "RobotoRegular", sans-serif;
+      font-family: $RobotoRegular;
       font-size: 10px;
       padding: 10px 34px;
       margin: 32px auto 0 auto;
@@ -276,7 +283,7 @@ body {
   padding: 32px 0;
 
   &__block {
-    font-family: "RobotoRegular", sans-serif;
+    font-family: $RobotoRegular;
     color: #000000;
     margin-bottom: 15px;
 
@@ -296,7 +303,7 @@ body {
   background-color: #E9E9E9;
 
   &__title {
-    font-family: "RobotoBold", sans-serif;
+    font-family: $RobotoBold;
     font-size: 20px;
     line-height: 164%;
     color: #333333;
@@ -317,14 +324,14 @@ body {
     }
 
     &__title {
-      font-family: "RobotoBold", sans-serif;
+      font-family: $RobotoBold;
       font-size: 9px;
       color: #000000;
       margin-bottom: 6px;
     }
 
     &__subtitle {
-      font-family: "RobotoBold", sans-serif;
+      font-family: $RobotoBold;
       font-size: 5px;
       color: #656565;
       margin-bottom: 30px;
@@ -339,7 +346,7 @@ body {
         margin-bottom: 7px;
         color: #7D7D7D;
         font-size: 10px;
-        font-family: "RobotoBold", sans-serif;
+        font-family: $RobotoBold;
         line-height: 164%;
         display: block;
         border: none;
@@ -351,7 +358,7 @@ body {
         height: 26px;
         color: #FFFFFF;
         background-color: #000000;
-        font-family: "RobotoRegular", sans-serif;
+        font-family: $RobotoRegular;
         font-size: 10px;
         border-radius: 3px;
         border: none;
@@ -367,7 +374,7 @@ body {
   padding: 14px 0 47px 0;
 
   &__text {
-     font-family: "RobotoRegular", sans-serif;
+    font-family: $RobotoRegular;
     font-size: 5px;
     color: #ADADAD;
   }
